@@ -1,3 +1,5 @@
+# Author: Ankith Srivathsan
+
 import pygame
 from pygame.sprite import Sprite
 

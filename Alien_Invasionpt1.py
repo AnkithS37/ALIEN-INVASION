@@ -1,3 +1,5 @@
+# Author: Ankith Srivathsan
+
 import sys
 
 import pygame

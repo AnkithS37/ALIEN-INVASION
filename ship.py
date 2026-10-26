@@ -1,3 +1,6 @@
+# Author: Ankith Srivathsan
+
+
 import pygame
 
 class Ship:
