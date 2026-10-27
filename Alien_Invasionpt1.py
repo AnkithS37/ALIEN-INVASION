@@ -83,7 +83,7 @@ class AlienInvasion:
                 self.bullets.remove(bullet)
 
     def _update_aliens(self):
-        """Update the postions of all aliens in the fleet"""
+        """Update the positions of all aliens in the fleet"""
         self.aliens.update()
 
     def _create_fleet(self):
