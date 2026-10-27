@@ -1,3 +1,5 @@
+# Author: Ankith Srivathsan
+
 class GameStats:
     """Track statistics for Alien Invasion."""
     
