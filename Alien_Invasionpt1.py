@@ -1,12 +1,14 @@
 # Author: Ankith Srivathsan
 
 import sys
+from time import sleep
 
 import pygame
 
 from bullet import Bullet
 from alien import Alien
 from settings import Settings
+from game_stats import GameStats
 from ship import Ship
 
 class AlienInvasion:
@@ -21,12 +23,16 @@ class AlienInvasion:
         self.screen = pygame.display.set_mode((self.settings.screen_width, self.settings.screen_height))
         pygame.display.set_caption("Alien Invasion")
 
+        # Create an instance to store game statistics.
+        self.stats = GameStats(self)
+
         # Set the background color
         self.bg_color = self.settings.bg_color
 
         self.ship = Ship(self)
         self.bullets = pygame.sprite.Group()
         self.aliens = pygame.sprite.Group()
+        self.stats = GameStats(self)
 
         self._create_fleet()
         
