@@ -78,13 +78,21 @@ class AlienInvasion:
     def _update_bullets(self):
         """Update the position of bullets and get rid of old bullets."""
         self.bullets.update()
+
+    # Get rid of bullets that have disappeared off the top of the screen.
         for bullet in self.bullets.copy():
             if bullet.rect.bottom <= 0:
                 self.bullets.remove(bullet)
 
-         # check for any bullets that have hit aliens.
+        self._check_bullet_alien_collisions()
+
+    def _check_bullet_alien_collisions(self):
+        """Respond to bullet-alien collisions."""
+        collisions = pygame.sprite.groupcollide(self.bullets, self.aliens, True, True)
+        # check for any bullets that have hit aliens.
         # if so, get rid of the bullet and the alien
         collisions = pygame.sprite.groupcollide(self.bullets, self.aliens, True, True)
+        
         if not self.aliens:
             # Destroy existing bullets and create new fleet.
             self.bullets.empty()
