@@ -132,7 +132,7 @@ class AlienInvasion:
             # Destroy existing bullets and create new fleet.
             self.bullets.empty()
             self._create_fleet()
-
+            self.settings.increase_speed()
 
     def _update_aliens(self):
         """Check if the fleet is at an egde, then update postions."""
@@ -159,6 +159,8 @@ class AlienInvasion:
             # Create a new fleet and center the ship.
             self._create_fleet()
             self.ship.center_ship()
+
+        
 
             # Pause.
             sleep(0.5)
