@@ -79,6 +79,7 @@ class AlienInvasion:
             self.settings.initialize_dynamic_settings()
             self.stats.reset_stats()
             self.sb.prep_score()
+            self.sb.prep_level()
             self.game_active = True
 
             
@@ -143,6 +144,10 @@ class AlienInvasion:
             self.bullets.empty()
             self._create_fleet()
             self.settings.increase_speed()
+
+            # Increase level.
+            self.stats.level += 1
+            self.sb.prep_level()
 
     def _update_aliens(self):
         """Check if the fleet is at an egde, then update postions."""
