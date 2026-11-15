@@ -8,4 +8,4 @@
 A space shooter. The ship, laser, background, and laser sound all use a space theme.
 
 ## Milestone 1 Demo
-Milestone_1_Demo: (video link goes here)
+Milestone_1_Demo: https://www.youtube.com/watch?v=lwoXvJdjFM0
