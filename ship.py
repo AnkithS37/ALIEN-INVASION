@@ -1,4 +1,10 @@
-# Author: Ankith Srivathsan
+"""
+Program Name: Galactic Defender - Track 2 (ship.py)
+Author: Ankith Srivathsan
+Purpose: Defines the Ship class, which draws the player's ship and handles its movement.
+Starter Code Links: https://github.com/ehmatthes/pcc_3e
+Date Updated: 11/15/2026
+"""
 
 
 import pygame
