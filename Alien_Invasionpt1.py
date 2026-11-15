@@ -1,4 +1,10 @@
-# Author: Ankith Srivathsan
+"""
+Program Name: Galactic Defender - Track 2 (Alien_Invasionpt1.py)
+Author: Ankith Srivathsan
+Purpose: Main game file. Runs the game loop, handles input, and draws the ship, lasers, and background.
+Starter Code Links: https://github.com/ehmatthes/pcc_3e
+Date Updated: 11/15/2026
+"""
 
 import sys
 from time import sleep
