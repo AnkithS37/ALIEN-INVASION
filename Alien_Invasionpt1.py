@@ -34,8 +34,8 @@ class AlienInvasion:
         self.bg_image = pygame.image.load(Path(__file__).parent / 'images' / 'background.png')
 
         # Create an instance to store game statistics.
-        self.stats = GameStats(self)
-        self.sb = Scoreboard(self)
+        #self.stats = GameStats(self)
+        #self.sb = Scoreboard(self)
 
         # Set the background color
         self.bg_color = self.settings.bg_color
@@ -44,12 +44,12 @@ class AlienInvasion:
         self.bullets = pygame.sprite.Group()
         self.aliens = pygame.sprite.Group()
  
-        self._create_fleet()
+        #self._create_fleet()
 
         #Start Alien Invasion in an active state.
-        self.game_active = False
+        self.game_active = True
                 # Make the Play button.
-        self.play_button = Button(self, "Play")
+        #self.play_button = Button(self, "Play")
         
     def run_game(self):
         """Start the main loop for the game."""
@@ -59,7 +59,7 @@ class AlienInvasion:
             if self.game_active:
                 self.ship.update()
                 self._update_bullets()
-                self._update_aliens()
+                #self._update_aliens()
         
             self._update_screen()
             self.clock.tick(60)
@@ -74,9 +74,9 @@ class AlienInvasion:
                 self._check_keydown_events(event)
             elif event.type == pygame.KEYUP:
                 self._check_keyup_events(event)
-            elif event.type == pygame.MOUSEBUTTONDOWN:
-                mouse_pos = pygame.mouse.get_pos()
-                self._check_play_button(mouse_pos)
+            #elif event.type == pygame.MOUSEBUTTONDOWN:
+                #mouse_pos = pygame.mouse.get_pos()
+                #self._check_play_button(mouse_pos)
 
     def _check_play_button(self, mouse_pos):
         """Start a new game when the player clicks Play."""
@@ -134,7 +134,7 @@ class AlienInvasion:
             if bullet.rect.bottom <= 0:
                 self.bullets.remove(bullet)
 
-        self._check_bullet_alien_collisions()
+        #self._check_bullet_alien_collisions()
 
     def _check_bullet_alien_collisions(self):
         """Respond to bullet-alien collisions."""
@@ -251,11 +251,11 @@ class AlienInvasion:
             for bullet in self.bullets.sprites():
                 bullet.draw_bullet()
             self.ship.blitme()
-            self.aliens.draw(self.screen)
+            #self.aliens.draw(self.screen)
             # Draw the score information.
-            self.sb.show_score()
-            if not self.game_active:
-                self.play_button.draw_button()
+            #self.sb.show_score()
+            #if not self.game_active:
+                #self.play_button.draw_button()
             pygame.display.flip()
             
       
