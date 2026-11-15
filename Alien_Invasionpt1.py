@@ -30,6 +30,9 @@ class AlienInvasion:
         # Load the laser sound.
         self.laser_sound = pygame.mixer.Sound(Path(__file__).parent / 'sounds' / 'laser.ogg')
 
+        # Load the background image.
+        self.bg_image = pygame.image.load(Path(__file__).parent / 'images' / 'background.png')
+
         # Create an instance to store game statistics.
         self.stats = GameStats(self)
         self.sb = Scoreboard(self)
@@ -240,7 +243,11 @@ class AlienInvasion:
 
     def _update_screen(self):
             """Update images on the screen, and flip to the new screen."""
-            self.screen.fill(self.bg_color)
+            # Tile the background image across the screen.
+            bg_width, bg_height = self.bg_image.get_size()
+            for x in range(0, self.settings.screen_width, bg_width):
+                for y in range(0, self.settings.screen_height, bg_height):
+                    self.screen.blit(self.bg_image, (x, y))
             for bullet in self.bullets.sprites():
                 bullet.draw_bullet()
             self.ship.blitme()
