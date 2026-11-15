@@ -25,7 +25,7 @@ class AlienInvasion:
         self.settings = Settings()
 
         self.screen = pygame.display.set_mode((self.settings.screen_width, self.settings.screen_height))
-        pygame.display.set_caption("Alien Invasion")
+        pygame.display.set_caption("Galactic Defender - Track 2")
 
         # Load the laser sound.
         self.laser_sound = pygame.mixer.Sound(Path(__file__).parent / 'sounds' / 'laser.ogg')
