@@ -13,12 +13,12 @@ from pathlib import Path
 import pygame
 
 from bullet import Bullet
-from alien import Alien
+#from alien import Alien
 from settings import Settings
-from game_stats import GameStats
-from scoreboard import Scoreboard
+#from game_stats import GameStats
+#from scoreboard import Scoreboard
 from ship import Ship
-from button import Button
+#from button import Button
 
 
 class AlienInvasion:
