@@ -2,6 +2,7 @@
 
 import sys
 from time import sleep
+from pathlib import Path
 
 import pygame
 
@@ -25,6 +26,9 @@ class AlienInvasion:
 
         self.screen = pygame.display.set_mode((self.settings.screen_width, self.settings.screen_height))
         pygame.display.set_caption("Alien Invasion")
+
+        # Load the laser sound.
+        self.laser_sound = pygame.mixer.Sound(Path(__file__).parent / 'sounds' / 'laser.ogg')
 
         # Create an instance to store game statistics.
         self.stats = GameStats(self)
@@ -116,6 +120,7 @@ class AlienInvasion:
         if len(self.bullets) < self.settings.bullets_allowed:
             new_bullet = Bullet(self)
             self.bullets.add(new_bullet)
+            self.laser_sound.play()
 
     def _update_bullets(self):
         """Update the position of bullets and get rid of old bullets."""
