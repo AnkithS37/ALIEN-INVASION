@@ -1,4 +1,10 @@
-# Author: Ankith Srivathsan
+"""
+Program Name: Galactic Defender - Track 2 (settings.py)
+Author: Ankith Srivathsan
+Purpose: Stores the game's settings, such as screen size, ship and laser speeds, and fleet behavior.
+Starter Code Links: https://github.com/ehmatthes/pcc_3e
+Date Updated: 11/15/2026
+"""
 
 class Settings:
     """A class to store all settings for Alien Invasion."""
